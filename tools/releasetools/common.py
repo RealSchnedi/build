@@ -2699,9 +2699,11 @@ class BlockDifference(object):
                   write_verify_script=False):
     if not self.src:
       # write the output unconditionally
-      script.Print("Patching %s image unconditionally..." % (self.partition,))
+      script.Print(" ")
+      script.Print("Flashing %s partition..." % (self.partition,))
     else:
-      script.Print("Patching %s image after verification." % (self.partition,))
+      script.Print(" ")
+      script.Print("Flashing %s partition after verification." % (self.partition,))
 
     if progress:
       script.ShowProgress(progress, 0)
@@ -2801,7 +2803,8 @@ class BlockDifference(object):
 
   def WritePostInstallVerifyScript(self, script):
     partition = self.partition
-    script.Print('Verifying the updated %s image...' % (partition,))
+    script.Print(" ")
+    script.Print('Verifying %s files...' % (partition,))
     # Unlike pre-install verification, clobbered_blocks should not be ignored.
     ranges = self.tgt.care_map
     ranges_str = ranges.to_string_raw()
@@ -2818,7 +2821,8 @@ class BlockDifference(object):
           'if range_sha1(%s, "%s") == "%s" then' % (
               self.device, ranges_str,
               self._HashZeroBlocks(self.tgt.extended.size())))
-      script.Print('Verified the updated %s image.' % (partition,))
+      script.Print(" ")
+      script.Print('Verified %s partition.' % (partition,))
       if partition == "system":
         code = ErrorCode.SYSTEM_NONZERO_CONTENTS
       else:
@@ -2829,7 +2833,8 @@ class BlockDifference(object):
           'OTA update");\n'
           'endif;' % (code, partition))
     else:
-      script.Print('Verified the updated %s image.' % (partition,))
+      script.Print(" ")
+      script.Print('Verified %s partition.' % (partition,))
 
     if partition == "system":
       code = ErrorCode.SYSTEM_UNEXPECTED_CONTENTS
