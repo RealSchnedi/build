@@ -1654,5 +1654,6 @@ if [ -z ${CCACHE_EXEC} ]; then
 fi
 
 export ANDROID_BUILD_TOP=$(gettop)
+export SKIP_ABI_CHECKS=true
 
 . $ANDROID_BUILD_TOP/vendor/derp/build/envsetup.sh
