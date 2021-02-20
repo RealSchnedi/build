@@ -44,6 +44,7 @@ PRODUCT_PACKAGES += \
     CertInstaller \
     clatd \
     clatd.conf \
+    DocumentsUI \
     DownloadProviderUi \
     EasterEgg \
     ExternalStorageProvider \
@@ -55,6 +56,7 @@ PRODUCT_PACKAGES += \
     MmsService \
     MtpService \
     MusicFX \
+    NfcNci \
     PacProcessor \
     PrintRecommendationService \
     PrintSpooler \
