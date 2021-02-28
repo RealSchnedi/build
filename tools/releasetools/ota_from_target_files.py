@@ -829,7 +829,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   device = target_info.GetBuildProp("ro.product.device")
 
   script.Print("--------------------------------");
-  script.Print("                        DERPFEST");
+  script.Print("                            DERP");
   script.Print("--------------------------------");
   script.Print(" Android version: %s"%(android_version));
   script.Print(" Security patch: %s"%(security_patch));
