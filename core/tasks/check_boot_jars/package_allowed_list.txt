@@ -265,4 +265,5 @@ org\.ifaa\.android\.manager.*
 
 ###################################################
 # LineageOS
+vendor.lineage.livedisplay.*
 vendor.lineage.touch.*
